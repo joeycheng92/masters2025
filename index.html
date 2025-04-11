@@ -1,412 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PGA Tour - Masters Tournament</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-    
-    body {
-      color: #333;
-      line-height: 1.5;
-    }
-    
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px;
-      border-bottom: 1px solid #e5e5e5;
-    }
-    
-    .logo-container img {
-      height: 40px;
-    }
-    
-    .main-nav {
-      flex: 1;
-      margin: 0 32px;
-    }
-    
-    .main-nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 16px;
-    }
-    
-    .nav-item {
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-    }
-    
-    .nav-item.active {
-      border-bottom: 2px solid #0056b3;
-      color: #0056b3;
-    }
-    
-    .right-nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    
-    .right-nav span {
-      font-size: 14px;
-      font-weight: 500;
-    }
-    
-    .icon-group {
-      display: flex;
-      gap: 8px;
-    }
-    
-    .main-content {
-      display: flex;
-      margin-top: 16px;
-    }
-    
-    .article-section {
-      flex: 1;
-      padding: 0 32px;
-    }
-    
-    .text-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-      font-size: 14px;
-      color: #666;
-      padding: 8px;
-      border: 1px solid #e5e5e5;
-      border-radius: 4px;
-    }
-    
-    .text-size-control {
-      display: flex;
-      align-items: center;
-    }
-    
-    .text-size-control span:first-child {
-      margin-right: 8px;
-    }
-    
-    .share-options {
-      display: flex;
-      gap: 16px;
-    }
-    
-    .article-content p {
-      margin-bottom: 16px;
-      font-size: 14px;
-      color: #666;
-    }
-    
-    .article-text p {
-      margin-bottom: 16px;
-      font-size: 16px;
-    }
-    
-    .tournament-sidebar {
-      width: 320px;
-      padding: 0 16px;
-      border-left: 1px solid #e5e5e5;
-    }
-    
-    .sidebar-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-    
-    .official-badge {
-      background-color: #e6f4ea;
-      color: #137333;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 8px;
-      border-radius: 4px;
-      margin-right: 8px;
-    }
-    
-    h2 {
-      font-weight: 700;
-      font-size: 20px;
-    }
-    
-    .leaderboard-item {
-      display: flex;
-      align-items: center;
-      padding: 8px 0;
-      border-bottom: 1px solid #e5e5e5;
-    }
-    
-    .player-img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-right: 8px;
-      background-color: #f0f0f0;
-    }
-    
-    .player-info {
-      flex: 1;
-    }
-    
-    .player-name {
-      font-weight: 500;
-    }
-    
-    .player-status {
-      font-size: 12px;
-      color: #888;
-    }
-    
-    .score {
-      font-weight: 700;
-      color: #d32f2f;
-    }
-    
-    .sidebar-footer {
-      margin-top: 16px;
-    }
-    
-    .sponsors {
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 8px;
-    }
-    
-    .sponsor-logos {
-      display: flex;
-      align-items: center;
-      margin-top: 4px;
-    }
-    
-    .sponsor-logos img {
-      height: 24px;
-      margin-right: 8px;
-    }
-    
-    .view-leaderboard {
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 8px 16px;
-      width: 100%;
-      text-align: center;
-      font-size: 14px;
-      background: white;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGA TOUR - Justin Rose steals Masters show</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #fff;
+        }
+        
+        .logo img {
+            height: 32px;
+        }
+        
+        .main-nav {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-nav li {
+            margin: 0 10px;
+        }
+        
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .main-nav a.active {
+            border-bottom: 3px solid #000;
+        }
+        
+        .right-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .right-nav a {
+            margin-left: 15px;
+            color: #333;
+        }
+        
+        /* Main content area */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .main-content {
+            flex: 1;
+            min-width: 60%;
+            padding-right: 30px;
+        }
+        
+        .sidebar {
+            width: 300px;
+            padding-left: 20px;
+        }
+        
+        /* Article styles */
+        .article-meta {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        
+        .article-title {
+            font-size: 32px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #111;
+        }
+        
+        .article-image {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        
+        .article-image img {
+            width: 100%;
+            border-radius: 4px;
+        }
+        
+        .article-image-caption {
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+        
+        .article-content {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .article-actions {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .article-actions button, .article-actions a {
+            margin-right: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        /* Tournament info styles */
+        .tournament-info {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .tournament-info h3 {
+            font-size: 14px;
+            color: #006838;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .tournament-info h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        /* Leaderboard styles */
+        .leaderboard-entry {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .player-rank {
+            width: 25px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .player-info {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+        
+        .player-flag {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .player-name {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .player-stats {
+            font-size: 12px;
+            color: #777;
+            margin-top: 2px;
+        }
+        
+        .player-score {
+            font-size: 16px;
+            font-weight: bold;
+            width: 30px;
+            text-align: right;
+        }
+        
+        .negative-score {
+            color: #d9534f;
+        }
+        
+        .even-score {
+            color: #000;
+        }
+        
+        .positive-score {
+            color: #5cb85c;
+        }
+        
+        .footer-banner {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .sponsors {
+            display: flex;
+            align-items: center;
+        }
+        
+        .sponsors span {
+            font-size: 12px;
+            color: #777;
+            margin-right: 10px;
+        }
+        
+        .sponsors img {
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        .leaderboard-button {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .main-content {
+                padding-right: 0;
+                width: 100%;
+            }
+            
+            .sidebar {
+                width: 100%;
+                padding-left: 0;
+                margin-top: 30px;
+            }
+            
+            .main-nav {
+                display: none;
+            }
+        }
+        
+        .highlight {
+            color: #006838;
+            font-weight: bold;
+        }
+        
+        /* Read time info */
+        .read-time {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .read-time span {
+            margin-right: 15px;
+        }
+        
+        .read-time span:last-child {
+            padding-left: 15px;
+            border-left: 1px solid #ddd;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header/Navigation -->
-  <header>
-    <div class="logo-container">
-      <img src="/api/placeholder/40/40" alt="PGA Tour Logo">
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li class="nav-item">Leaderboard</li>
-        <li class="nav-item">Watch & Listen</li>
-        <li class="nav-item active">News</li>
-        <li class="nav-item">FedExCup</li>
-        <li class="nav-item">Schedule</li>
-        <li class="nav-item">Players</li>
-        <li class="nav-item">Stats</li>
-        <li class="nav-item">Fantasy & Betting</li>
-        <li class="nav-item">Signature Events</li>
-        <li class="nav-item">More▾</li>
-      </ul>
-    </nav>
-    <div class="right-nav">
-      <span>Tours</span>
-      <div class="icon-group">
-        <span>👤</span>
-        <span>🔍</span>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Content Area -->
-  <div class="main-content">
-    <!-- Article Section -->
-    <div class="article-section">
-      <!-- Text size and share options -->
-      <div class="text-controls">
-        <div class="text-size-control">
-          <span>A</span>
-          <span>Change Text Size</span>
+    <header>
+        <div class="logo">
+            <img src="https://pgatour.com/etc.clientlibs/pgatour/clientlibs/clientlib-site/resources/images/logo-blue.svg" alt="PGA TOUR">
         </div>
-        <div class="share-options">
-          <span>𝕏</span>
-          <span>𝕗</span>
-          <span>🖨️</span>
-          <span>✉️</span>
+        <ul class="main-nav">
+            <li><a href="#">Leaderboard</a></li>
+            <li><a href="#">Watch & Listen</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#" class="active">FedExCup</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="#">Players</a></li>
+            <li><a href="#">Stats</a></li>
+            <li><a href="#">Fantasy & Betting</a></li>
+            <li><a href="#">Signature Events</a></li>
+            <li><a href="#">More</a></li>
+        </ul>
+        <div class="right-nav">
+            <a href="#">Tours</a>
+            <a href="#">🔍</a>
+            <a href="#">👤</a>
         </div>
-      </div>
-
-      <!-- Article content -->
-      <div class="article-content">
-        <p>Written by Associated Press</p>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="article-meta">9TH APR</div>
+            <h1 class="article-title">Joey Cheng Leads with 1 shot over Bill Jin with stunning Master 2025 Performance. Colin Roche Still Missing</h1>
+            
+            <div class="read-time">
+                <span>5 Min Read</span>
+                <span>Daily Wrap Up</span>
+            </div>
+            
+            <div class="article-image">
+                <img src="/api/placeholder/800/500" alt="Justin Rose raises his cap after finishing his round at the Masters Tournament">
+                <div class="article-image-caption">Joey Cheng celebrates his fantasy golf lead after the dramatic first round of the 2025 Fantasy Masters Tournament (Fantasy Golf/Getty Images)</div>
+            </div>
+            
+            <div class="article-actions">
+                <button>↑ Change Text Size</button>
+                <a href="#">🔊</a>
+                <a href="#">↗️</a>
+                <a href="#">📧</a>
+            </div>
+            
+            <div class="article-content">
+                <p>Written by Fantasy Golf Correspondent</p>
+                
+                <p><strong>AUGUSTA, Ga. --</strong> The pristine greens of Augusta National weren't the only place witnessing drama on Thursday. The opening round of the highly anticipated Fantasy Masters produced fireworks, shockers, and head-scratching moments, leaving the leaderboard tightly packed at the top but littered with casualties further down.</p>
+                
+                <p>Veteran Justin Rose (-7) showed flashes of his major-winning pedigree, navigating the virtual course with precision to grab a share of the early lead. His stellar performance provided a massive boost for his fantasy backers (none of whom are in this league). Joey Cheng, whose strategic of major champions have anchored his own surge to the top spot, also at -7.</p>
+                
+                <p>However, Cheng, along with second-place manager Bill Jin (-6), might be feeling the pressure already. While their leading men delivered, whispers around the fantasy clubhouse suggest the rest of their rosters are bleeding strokes.</p>
+                
+                <p>The biggest story, however, wasn't at the top, but centered around the stunning collapse of Rory McIlroy. Expected by many to contend, McIlroy's performance was nothing short of disastrous. Plagued by unforced errors and questionable course management, his round imploded spectacularly, leaving his fantasy managers reeling. Sources described the performance with brutal honesty, comparing the meltdown unfavorably to infamous sporting chokes – a truly forgettable day for the Northern Irishman's backers.</p>
+                
+                <p>Adding to the day's intrigue were the unexpected absences of Ryan Fox and Colin Roche. Both were conspicuously missing from the tee sheets, with unofficial reports citing a bizarre logistical snafu involving "an excessive number of bags misplaced somewhere in Miami." Their fantasy managers were left scrambling for emergency replacements, their tournament hopes potentially derailed before they even began.</p>
+                
+                <p>Elsewhere, Kevin Yu provided a surprising bright spot for his manager, carding a +4 that significantly "defied expectations." While over par, the score was far better than pundits predicted, representing a small victory on a tough scoring day.</p>
+                
+                <p>Ben Wedd, meanwhile, embodied consistency, grinding out a respectable +1, keeping himself firmly in the mix without any major fireworks.</p>
+                
+                <p>Not everyone navigated the day smoothly. Jeremy Shen endured a turbulent round marred by what sources described as "multiple admin issues seemingly caused by Jock." The exact nature of the problems remains unclear, but it clearly impacted Shen's focus and final tally, proving that sometimes the biggest hazards lie outside the ropes – or in the league's backend systems.</p>
+                
+                <p>Perhaps the most statistically curious result belonged to the Traveerungroj twins. In a perfect illustration of golf's fickle nature (and perhaps sibling rivalry), Jack and Jock finished with identical numbers, but opposite signs. Jack struggled to a +4, while Jock soared with a -4, putting them eight shots apart and demonstrating that even twins can have wildly different days at Augusta.</p>
+                
+                <p>As the (digital) sun sets on Day 1, the stage is set for a compelling second round. Can Rose maintain his form? Will Cheng and Jin get support from their struggling rosters? Can McIlroy's backers recover? And will Fox and Roche ever locate their luggage? Friday promises more drama at the Fantasy Masters.</p>
+            </div>
+        </div>
         
-        <div class="article-text">
-          <p>AUGUSTA, Ga. (AP) — Just a couple of weeks ago, Scottie Scheffler thought his game was not quite as sharp as he would have wanted it.</p>
-          
-          <p>"Sharp" might be a poor word choice given what happened in December.</p>
-          
-          <p>In any case, Scheffler's game looked — How should we say it? — nicely honed in the opening round of the Masters on Thursday, when the defending champion shot a bogey-free 68 to put himself squarely in the mix. Sheffler made two long birdie putts and a couple of nice saves from bunkers on an Augusta National course that was ripe for some red numbers.</p>
-          
-          <p>"I don't really care what happened in the last few tournaments," said Scheffler, who arrived this week winless for the first time since 2021. "Any time you get close to the lead, it's going to be easier for you to win the golf tournament. That's a simple fact of the matter. You get off to a good start, statistically you're going to have a better chance to win."</p>
-          
-          <p>His good start began at the par-5 second, when Scheffler got up-and-down for birdie from 40 yards out. But it really brightened at the par-3 fourth, when he rolled in a putt from 62 feet across a green that slopes dramatically from back to front.</p>
-          
-          <p>Scheffler added another birdie at the par-5 eighth, then rolled in a 42-footer for birdie at No. 16. Throw in a pretty sand save at the next hole, when Scheffler managed to carry his bunker shot all the way to the top-shelf hole location at the back of the green, and the world's top-ranked player was happy to sign for a 4-under round to start his tournament.</p>
+        <div class="sidebar">
+            <div class="tournament-info">
+                <h3>OFFICIAL</h3>
+                <h2>Fantasy Masters 2025</h2>
+                
+                <div class="leaderboard-entry">
+                    <div class="player-info">
+                        <div class="player-flag">🇨🇳</div>
+                        <div>
+                            <div class="player-name">J. Cheng</div>
+                            <div class="player-stats">18 THRU F</div>
+                        </div>
+                    </div>
+                    <div class="player-score negative-score">-7</div>
+                </div>
+                
+                <div class="leaderboard-entry">
+                    <div class="player-info">
+                        <div class="player-flag">🇨🇳</div>
+                        <div>
+                            <div class="player-name">B. Jin</div>
+                            <div class="player-stats">18 THRU F</div>
+                        </div>
+                    </div>
+                    <div class="player-score negative-score">-6</div>
+                </div>
+                
+                <div class="leaderboard-entry">
+                    <div class="player-info">
+                        <div class="player-flag">🇹🇭</div>
+                        <div>
+                            <div class="player-name">Jo. Traveerungroj</div>
+                            <div class="player-stats">18 THRU F</div>
+                        </div>
+                    </div>
+                    <div class="player-score negative-score">-4</div>
+                </div>
+                
+                <div class="leaderboard-entry">
+                    <div class="player-info">
+                        <div class="player-flag">🇹🇼</div>
+                        <div>
+                            <div class="player-name">J. Shen</div>
+                            <div class="player-stats">18 THRU F</div>
+                        </div>
+                    </div>
+                    <div class="player-score negative-score">-2</div>
+                </div>
+                
+                <div class="leaderboard-entry">
+                    <div class="player-info">
+                        <div class="player-flag">🇳🇿</div>
+                        <div>
+                            <div class="player-name">B. Wedd</div>
+                            <div class="player-stats">18 THRU F</div>
+                        </div>
+                    </div>
+                    <div class="player-score positive-score">+1</div>
+                </div>
+                
+                <div class="leaderboard-entry">
+                    <div class="player-info">
+                        <div class="player-flag">🇲🇾</div>
+                        <div>
+                            <div class="player-name">C. Roche</div>
+                            <div class="player-stats">18 THRU F</div>
+                        </div>
+                    </div>
+                    <div class="player-score positive-score">+3</div>
+                </div>
+                
+                <div class="leaderboard-entry">
+                    <div class="player-info">
+                        <div class="player-flag">🇹🇭</div>
+                        <div>
+                            <div class="player-name">Ja. Traveerungroj</div>
+                            <div class="player-stats">18 THRU F</div>
+                        </div>
+                    </div>
+                    <div class="player-score positive-score">+4</div>
+                </div>
+            </div>
+            
+            <div class="footer-banner">
+                <div class="sponsors">
+                    <span>PRESENTED BY</span>
+                    <img src="/api/placeholder/60/30" alt="Mastercard">
+                    <img src="/api/placeholder/60/30" alt="CVS">
+                </div>
+                <button class="leaderboard-button">View Leaderboard</button>
+            </div>
         </div>
-      </div>
     </div>
-
-    <!-- Tournament Leaderboard Sidebar -->
-    <div class="tournament-sidebar">
-      <div class="sidebar-header">
-        <div class="official-badge">OFFICIAL</div>
-        <h2>Masters Tournament</h2>
-      </div>
-
-      <!-- Leaderboard -->
-      <div class="leaderboard">
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">J. Rose</div>
-            <div class="player-status">T1 THRU F</div>
-          </div>
-          <div class="score">-7</div>
-        </div>
-
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">C. Conners</div>
-            <div class="player-status">T2 THRU F</div>
-          </div>
-          <div class="score">-4</div>
-        </div>
-
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">S. Scheffler</div>
-            <div class="player-status">T2 THRU F</div>
-          </div>
-          <div class="score">-4</div>
-        </div>
-
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">L. Åberg</div>
-            <div class="player-status">T2 THRU F</div>
-          </div>
-          <div class="score">-4</div>
-        </div>
-
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">T. Hatton</div>
-            <div class="player-status">T5 THRU F</div>
-          </div>
-          <div class="score">-3</div>
-        </div>
-
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">B. DeChambeau</div>
-            <div class="player-status">T5 THRU F</div>
-          </div>
-          <div class="score">-3</div>
-        </div>
-
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">A. Rai</div>
-            <div class="player-status">T7 THRU F</div>
-          </div>
-          <div class="score">-2</div>
-        </div>
-
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">H. English</div>
-            <div class="player-status">T7 THRU F</div>
-          </div>
-          <div class="score">-2</div>
-        </div>
-
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">J. Day</div>
-            <div class="player-status">T7 THRU F</div>
-          </div>
-          <div class="score">-2</div>
-        </div>
-
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">A. Bhullar</div>
-            <div class="player-status">T7 THRU F</div>
-          </div>
-          <div class="score">-2</div>
-        </div>
-
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">M. Kim</div>
-            <div class="player-status">T11 THRU F</div>
-          </div>
-          <div class="score">-1</div>
-        </div>
-
-        <div class="leaderboard-item">
-          <img src="/api/placeholder/40/40" alt="Player" class="player-img">
-          <div class="player-info">
-            <div class="player-name">D. Thompson</div>
-            <div class="player-status">T11 THRU F</div>
-          </div>
-          <div class="score">-1</div>
-        </div>
-      </div>
-
-      <!-- Sponsors and View Leaderboard Button -->
-      <div class="sidebar-footer">
-        <div class="sponsors">
-          <span>POWERED BY</span>
-          <div class="sponsor-logos">
-            <img src="/api/placeholder/40/20" alt="Mastercard">
-            <img src="/api/placeholder/40/20" alt="CDW">
-          </div>
-        </div>
-        <button class="view-leaderboard">
-          View Leaderboard
-        </button>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
