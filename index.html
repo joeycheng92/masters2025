@@ -1,466 +1,651 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Masters 2025 TOUR - McIlroy Redemption Fuels Leaderboard Shakeup</title>
-    <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        
-        body {
-            background-color: #ffffff;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        /* Header styles */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            border-bottom: 1px solid #e0e0e0;
-            background-color: #fff;
-        }
-        
-        .logo img {
-            height: 32px;
-        }
-        
-        .main-nav {
-            display: flex;
-            list-style: none;
-        }
-        
-        .main-nav li {
-            margin: 0 10px;
-        }
-        
-        .main-nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 14px;
-            font-weight: 600;
-            padding: 5px 0;
-            position: relative;
-        }
-        
-        .main-nav a.active {
-            border-bottom: 3px solid #000;
-        }
-        
-        .right-nav {
-            display: flex;
-            align-items: center;
-        }
-        
-        .right-nav a {
-            margin-left: 15px;
-            color: #333;
-        }
-        
-        /* Main content area */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .main-content {
-            flex: 1;
-            min-width: 60%;
-            padding-right: 30px;
-        }
-        
-        .sidebar {
-            width: 300px;
-            padding-left: 20px;
-        }
-        
-        /* Article styles */
-        .article-meta {
-            font-size: 12px;
-            color: #777;
-            margin-bottom: 20px;
-        }
-        
-        .article-title {
-            font-size: 32px;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: #111;
-        }
-        
-        .article-image {
-            width: 100%;
-            margin-bottom: 15px;
-            border-radius: 4px;
-        }
-        
-        .article-image img {
-            width: 100%;
-            border-radius: 4px;
-        }
-        
-        .article-image-caption {
-            font-size: 12px;
-            color: #777;
-            margin-top: 5px;
-            line-height: 1.4;
-        }
-        
-        .article-content {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-top: 20px;
-        }
-        
-        .article-content p {
-            margin-bottom: 20px;
-        }
-        
-        .article-actions {
-            display: flex;
-            align-items: center;
-            margin: 20px 0;
-            padding: 15px 0;
-            border-top: 1px solid #e0e0e0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .article-actions button, .article-actions a {
-            margin-right: 15px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #666;
-        }
-        
-        /* Tournament info styles */
-        .tournament-info {
-            background-color: #f8f8f8;
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-        }
-        
-        .tournament-info h3 {
-            font-size: 14px;
-            color: #006838;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-        
-        .tournament-info h2 {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-        
-        /* Leaderboard styles */
-        .leaderboard-entry {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .player-rank {
-            width: 25px;
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .player-info {
-            display: flex;
-            align-items: center;
-            flex: 1;
-        }
-        
-        .player-flag {
-            font-size: 24px;
-            margin-right: 10px;
-        }
-        
-        .player-name {
-            font-size: 14px;
-            font-weight: bold;
-        }
-        
-        .player-stats {
-            font-size: 12px;
-            color: #777;
-            margin-top: 2px;
-        }
-        
-        .player-score {
-            font-size: 16px;
-            font-weight: bold;
-            width: 30px;
-            text-align: right;
-        }
-        
-        .negative-score {
-            color: #5cb85c;
-        }
-        
-        .even-score {
-            color: #000;
-        }
-        
-        .positive-score {
-            color: #d9534f;
-        }
-        
-        .footer-banner {
-            background-color: #f9f9f9;
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .sponsors {
-            display: flex;
-            align-items: center;
-        }
-        
-        .sponsors span {
-            font-size: 12px;
-            color: #777;
-            margin-right: 10px;
-        }
-        
-        .sponsors img {
-            height: 20px;
-            margin-right: 10px;
-        }
-        
-        .leaderboard-button {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            
-            .main-content {
-                padding-right: 0;
-                width: 100%;
-            }
-            
-            .sidebar {
-                width: 100%;
-                padding-left: 0;
-                margin-top: 30px;
-            }
-            
-            .main-nav {
-                display: none;
-            }
-        }
-        
-        .highlight {
-            color: #006838;
-            font-weight: bold;
-        }
-        
-        /* Read time info */
-        .read-time {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .read-time span {
-            margin-right: 15px;
-        }
-        
-        .read-time span:last-child {
-            padding-left: 15px;
-            border-left: 1px solid #ddd;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>The 2025 Fantasy Masters League - Final Results</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@400;500;600&display=swap');
+    
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.75in;
+      color: #222;
+      line-height: 1.5;
+      background-color: #f9f7f2;
+    }
+    
+    @media print {
+      body {
+        page-break-inside: avoid;
+        background-color: #f9f7f2 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .divider, .content, .header {
+        page-break-inside: avoid;
+      }
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    
+    .title {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      color: #006747; /* Masters green */
+      margin-bottom: 0.2em;
+      font-weight: 600;
+    }
+    
+    .subtitle {
+      font-style: italic;
+      font-size: 18px;
+      margin-bottom: 1.5em;
+    }
+    
+    .logo {
+      max-width: 300px;
+      height: auto;
+      margin: 1em auto;
+      display: block;
+    }
+    
+    .divider {
+      border-top: 1px solid #006747;
+      margin: 1.5em 0;
+    }
+    
+    .address {
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 1.5em;
+    }
+    
+    .content {
+      text-align: justify;
+      font-size: 16px;
+    }
+    
+    .bold {
+      font-weight: 600;
+    }
+    
+    .signature {
+      text-align: right;
+      margin-top: 2em;
+      font-style: italic;
+    }
+    
+    .footer {
+      margin-top: 2em;
+      text-align: center;
+      font-style: italic;
+    }
+    
+    .results-table {
+      width: 100%;
+      margin: 2em auto;
+      border-collapse: collapse;
+      border: 1px solid #006747;
+      background-color: #fff;
+      box-shadow: 0 0 15px rgba(0,103,71,0.1);
+    }
+    
+    .results-table th, .results-table td {
+      padding: 8px 12px;
+      text-align: center;
+      border: 1px solid #006747;
+    }
+    
+    .results-table th {
+      background-color: #006747;
+      color: white;
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+    }
+    
+    .results-table tr:nth-child(even) {
+      background-color: rgba(0,103,71,0.05);
+    }
+    
+    .player-row {
+      background-color: rgba(0,103,71,0.1);
+      font-weight: 600;
+    }
+    
+    .winner {
+      color: #006747;
+      font-weight: 700;
+    }
+    
+    .negative {
+      color: #006747;
+    }
+    
+    .positive {
+      color: #990000;
+    }
+    
+    .scorecard {
+      margin: 2em auto;
+      border: 1px solid #006747;
+      padding: 1.5em;
+      background-color: #fff;
+      box-shadow: 0 0 15px rgba(0,103,71,0.1);
+    }
+    
+    .scorecard-title {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      color: #006747;
+      text-align: center;
+      margin-bottom: 1em;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #006747;
+      padding-bottom: 8px;
+    }
+    
+    .player-score {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dotted #ddd;
+    }
+    
+    .player-name {
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      width: 40%;
+    }
+    
+    .player-total {
+      font-weight: 600;
+      width: 20%;
+      text-align: right;
+    }
+    
+    .player-position {
+      width: 10%;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="images/pga-tour-logo.svg" alt="PGA TOUR">
-        </div>
-        <ul class="main-nav">
-            <li><a href="#">Leaderboard</a></li>
-            <li><a href="#">Watch & Listen</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#" class="active">FedExCup</a></li>
-            <li><a href="#">Schedule</a></li>
-            <li><a href="#">Players</a></li>
-            <li><a href="#">Stats</a></li>
-            <li><a href="#">Fantasy & Betting</a></li>
-            <li><a href="#">Signature Events</a></li>
-            <li><a href="#">More</a></li>
-        </ul>
-        <div class="right-nav">
-            <a href="#">Tours</a>
-            <a href="#">🔍</a>
-            <a href="#">👤</a>
-        </div>
-    </header>
+  <div class="header">
+    <div class="title">AUGUSTA NATIONAL GOLF CLUB</div>
+    <div class="subtitle">AUGUSTA, GEORGIA</div>
+    <div class="divider"></div>
+  </div>
+  
+  <div class="content">
+    <p>To the Esteemed Participants of the 2025 Fantasy Masters,</p>
     
-    <div class="container">
-        <div class="main-content">
-            <div class="article-meta">9TH APR</div>
-            <h1 class="article-title">McIlroy Redemption Fuels Leaderboard Shakeup; Jin Takes Command as Cut Line Claims Victims</h1>
-            
-            <div class="read-time">
-                <span>5 Min Read</span>
-                <span>Daily Wrap Up</span>
-            </div>
-            
-            <div class="article-image">
-                <img src="images/Websitephoto.jpg" alt="Justin Rose raises his cap after finishing his round at the Masters Tournament">
-                <div class="article-image-caption"> B.Jin Kicking off Masters Celebrations Early after 8 Shot Lead Round 3 Lead  (Getty Images)</div>
-            </div>
-            
-            <div class="article-actions">
-                <button>↑ Change Text Size</button>
-                <a href="#">🔊</a>
-                <a href="#">↗️</a>
-                <a href="#">📧</a>
-            </div>
-            
-            <div class="article-content">
-                <p>Written by Fantasy Golf Correspondent</p>
-                
-                <p><strong>AUGUSTA, Ga. --</strong> Saturday at the Fantasy Masters was electric from the opening virtual tee shot, primarily thanks to <strong>Rory McIlroy</strong>, who continued his redemption tour with breathtaking brilliance. Exploding out of the gates, McIlroy started his round <strong>Birdie-Eagle-Birdie</strong>, a torrid stretch that immediately signaled his intent and sent waves of excitement through the managers relying on him. Building on his stunning Round 2 comeback, this incredible start solidified his place at the top of the actual leaderboard, but now he faces that familiar, intense pressure, hounded by a charging <strong>Bryson DeChambeau</strong>. The question hanging heavy in the virtual air is unavoidable: Can Rory maintain this scorching form to finally claim the career grand slam, or will the weight of expectation trigger another heartbreaking collapse, echoing past major disappointments? His Sunday performance is now intrinsically linked to the fate of several fantasy contenders.</p>
-                
-                <p>That potential swing weighs heavily, even on league leader <strong>Bill Jin</strong>. Propelled largely by McIlroy's heroics, Jin sits atop the standings at a formidable <strong>-19</strong>, holding a commanding <strong>8-shot lead</strong> over his nearest competitor. Perhaps feeling victory was already in hand, Jin, along with the <strong>Traveerungroj twins, Jock and Jack</strong>, were reportedly seen making an early exit from the virtual clubhouse proceedings, heading off for premature "Shanghai festivities." With such a comfortable cushion, it appears Jin began celebrating early; one can only hope the potential hangover doesn't cloud his judgment or luck come Sunday's crucial final round. Much like their famously quick swing releases, their departure from the Saturday night leaderboard watch was swift, leaving others to sweat out the final pairings.</p>
-                
-                <p>This early exit might also stem from the sheer frustration felt across the league regarding roster limitations. The painful effects of Friday's cut, exacerbated by the pre-tournament salary cap, were palpable on Moving Day. Managers bemoaned their lack of depth, with depleted benches offering zero margin for error. "Starting hot is great, but with these short benches, one bad round tomorrow sinks you," noted one manager. "That cap and cut combo? Definitely not the organizer's finest hour. It's turned into survival of the luckiest."</p>
-                
-                <p>The Traveerungroj twins, before their departure, seemed locked in their own grim contest at the bottom, battling for the wooden spoon rather than the Green Jacket – their disparate Day 1 scores now a distant memory amidst the weekend attrition.</p>
-                
-                <p>Despite Jin's significant lead, the chase pack remains dangerous. <strong>Joey Cheng (-11)</strong> holds onto second place, strategically navigating the minefield, while <strong>Ben Wedd (-10)</strong> lurks close behind in third. Both know a McIlroy stumble or a surge from their own remaining players could dramatically tighten things up.</p>
-                
-                <p>Flying somewhat under the radar is <strong>Jeremy Shen</strong>. Ending his Saturday at a solid <strong>-4</strong>, Shen is firmly mid-pack but remains one of the few managers comfortably in red figures. In a tournament marked by wild swings, his consistent presence could yet pay dividends.</p>
-                
-                <p>Sunday promises a potentially dramatic conclusion. Will Jin's seemingly insurmountable lead hold? Can Rory finally conquer Augusta? Are Cheng or Wedd poised for an improbable comeback? The virtual Green Jacket awaits its champion.</p>
-            </div>
-        </div>
-        
-        <div class="sidebar">
-            <div class="tournament-info">
-                <h3>OFFICIAL</h3>
-                <h2>Fantasy Masters 2025</h2>
-                
-                <div class="leaderboard-entry">
-                    <div class="player-info">
-                        <div class="player-flag">🇨🇳</div>
-                        <div>
-                            <div class="player-name">B. Jin</div>
-                            <div class="player-stats">18 THRU F</div>
-                        </div>
-                    </div>
-                    <div class="player-score negative-score">-19</div>
-                </div>
-                
-                <div class="leaderboard-entry">
-                    <div class="player-info">
-                        <div class="player-flag">🇨🇳</div>
-                        <div>
-                            <div class="player-name">J. Cheng</div>
-                            <div class="player-stats">18 THRU F</div>
-                        </div>
-                    </div>
-                    <div class="player-score negative-score">-11</div>
-                </div>
-                
-                <div class="leaderboard-entry">
-                    <div class="player-info">
-                        <div class="player-flag">🇳🇿</div>
-                        <div>
-                            <div class="player-name">B. Wedd</div>
-                            <div class="player-stats">18 THRU F</div>
-                        </div>
-                    </div>
-                    <div class="player-score negative-score">-10</div>
-                </div>
-                
-                <div class="leaderboard-entry">
-                    <div class="player-info">
-                        <div class="player-flag">🇹🇼</div>
-                        <div>
-                            <div class="player-name">J. Shen</div>
-                            <div class="player-stats">18 THRU F</div>
-                        </div>
-                    </div>
-                    <div class="player-score negative-score">-4</div>
-                </div>
-                
-                <div class="leaderboard-entry">
-                    <div class="player-info">
-                        <div class="player-flag">🇲🇾</div>
-                        <div>
-                            <div class="player-name">C. Roche</div>
-                            <div class="player-stats">18 THRU F</div>
-                        </div>
-                    </div>
-                    <div class="player-score even-score">E</div>
-                </div>
-                
-                <div class="leaderboard-entry">
-                    <div class="player-info">
-                        <div class="player-flag">🇹🇭</div>
-                        <div>
-                            <div class="player-name">Jo. Traveerungroj</div>
-                            <div class="player-stats">18 THRU F</div>
-                        </div>
-                    </div>
-                    <div class="player-score positive-score">+11</div>
-                </div>
-                
-                <div class="leaderboard-entry">
-                    <div class="player-info">
-                        <div class="player-flag">🇹🇭</div>
-                        <div>
-                            <div class="player-name">Ja. Traveerungroj</div>
-                            <div class="player-stats">18 THRU F</div>
-                        </div>
-                    </div>
-                    <div class="player-score positive-score">+17</div>
-                </div>
-            </div>
-            
-            <div class="footer-banner">
-                <div class="sponsors">
-                    <span>PRESENTED BY</span>
-                    <img src="images/mastercard-logo.png" alt="Mastercard">
-                    <img src="images/cvs-logo.png" alt="CVS">
-                </div>
-                <button class="leaderboard-button">View Leaderboard</button>
-            </div>
-        </div>
+    <p>As the final echoes of patronage appreciation fade across the Azaleas and the shadows lengthen over Rae's Creek, we conclude another Masters Tournament, marked by the enduring drama and spirit of competition that define this cherished week.</p>
+    
+    <p>Championship Sunday unfolded with the characteristic intensity that only Augusta National on the final day can provide. It was a day of profound shifts in fortune, where the pressure inherent in pursuing a Green Jacket saw several leaders falter, creating opportunities for remarkable advances. None was more striking than that of Mr. Justin Rose, who navigated the course with exceptional skill, posting a six-under-par sixty-six to surge prominently onto the final leaderboard.</p>
+    
+    <p>The ultimate triumph, however, belonged to Mr. Rory McIlroy. In a narrative arc defined by resilience, he confronted not only the formidable challenge of the course and his competitors but also the considerable weight of past experiences and childhood aspirations. His victory, secured resolutely on the first hole of a sudden-death playoff against Mr. Rose, represents a crowning achievement and the completion of the career Grand Slam.</p>
+    
+    <p>The final round proved less favorable for others who began the day in contention. Mr. Bryson DeChambeau encountered difficulties, carding a three-over-par seventy-five that saw him slip down the final standings. We also observed the unfortunate conclusion to Mr. Ludvig Åberg's round; positioned near the lead, late scores on the seventeenth and eighteenth holes altered his final standing significantly.</p>
+    
+    <p>These dramatic events on the course directly influenced the outcome of our Fantasy Masters. We extend our warmest congratulations to Mr. Bill Jin, this year's Fantasy Masters Champion. His strategic selections, particularly his faith in the eventual winner, Mr. McIlroy, propelled him to the top of the leaderboard. We also commend Mr. Ben Wedd, whose similar reliance on Mr. McIlroy's performance secured him a commendable second-place finish.</p>
+    
+    <p>While Mr. Jin celebrates this particular triumph, we understand from observations within the league's own spirited discourse that his competitive endeavors extend beyond our fantasy competition, presenting varied challenges in other arenas – indeed, reports suggest a dynamic competitive environment exists even within his own household regarding rankings in other leagues, such as Formula 1.</p>
+  </div>
+  
+  <div class="scorecard" style="text-align: center;">
+    <div class="scorecard-title">2025 Fantasy Masters - Final Standings</div>
+    
+    <div class="player-score">
+      <div class="player-position">1.</div>
+      <div class="player-name">Bill Jin</div>
+      <div class="player-total negative">-12</div>
     </div>
+    
+    <div class="player-score">
+      <div class="player-position">2.</div>
+      <div class="player-name">Ben Wedd</div>
+      <div class="player-total negative">-7</div>
+    </div>
+    
+    <div class="player-score">
+      <div class="player-position">3.</div>
+      <div class="player-name">Joey Cheng</div>
+      <div class="player-total negative">-6</div>
+    </div>
+    
+    <div class="player-score">
+      <div class="player-position">4.</div>
+      <div class="player-name">Colin Roche</div>
+      <div class="player-total positive">+1</div>
+    </div>
+    
+    <div class="player-score">
+      <div class="player-position">5.</div>
+      <div class="player-name">Jeremy Shen</div>
+      <div class="player-total positive">+6</div>
+    </div>
+    
+    <div class="player-score">
+      <div class="player-position">6.</div>
+      <div class="player-name">Jock Traveerungroj</div>
+      <div class="player-total positive">+14</div>
+    </div>
+    
+    <div class="player-score">
+      <div class="player-position">7.</div>
+      <div class="player-name">Jack Traveerungroj</div>
+      <div class="player-total positive">+26</div>
+    </div>
+  </div>
+  
+  <div class="content">
+    <p>We acknowledge last year's esteemed winner, Mr. Joey Cheng. As anticipated by some following the opening rounds, his significant investment in players such as Mr. DeChambeau and Mr. Scheffler led to a challenging final day and a tumble from the leading positions. The demanding nature of this year's competition, especially the repercussions of the cut after Friday's play, was evident across the final standings, with many participants concluding the tournament with positive scores due to reduced active player rosters. Amidst this, we note the respectable plus-one score achieved by Mr. Colin Roche, a solid midfield finish secured under rather unique circumstances that will likely provide fodder for future league recollections.</p>
+    
+    <p>On behalf of the Committee, we wish to extend our sincere gratitude to all participants for their engagement and effort throughout this Fantasy Masters competition. Your participation brings this event to life. Furthermore, we would like to take this moment to extend special congratulations to Mr. Jack Traveerungroj on the joyous occasion of his recent engagement. We wish him and his fiancée all the very best for their future together.</p>
+    
+    <p>The 2025 Masters Tournament is now etched into the annals of golf history. It has been our distinct privilege to host this engaging fantasy competition alongside the main event. In accordance with tradition, Mr. Joey Cheng respectably relinquishes the title, passing the honor and accompanying bragging rights to our 2025 Champion, Mr. Bill Jin.</p>
+    
+    <p>We thank each of you for your participation and sportsmanship throughout the week and anticipate the return of this tradition next April.</p>
+    
+    <div class="signature">
+      <p>Respectfully,</p>
+      <p><span class="bold">The Augusta National Golf Club</span><br>
+      <em>(On behalf of the Fantasy Masters Commissioner)</em></p>
+    </div>
+  </div>
+  
+  <div class="divider"></div>
+  
+  <div class="results-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Golfer</th>
+          <th>R1</th>
+          <th>R2</th>
+          <th>R3</th>
+          <th>R4</th>
+          <th>Total</th>
+          <th>Team Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Jock's Team -->
+        <tr class="player-row">
+          <td rowspan="6">Jock</td>
+          <td>Collin Morikawa</td>
+          <td>0</td>
+          <td>-3</td>
+          <td>0</td>
+          <td>0</td>
+          <td>-3</td>
+          <td rowspan="6" class="positive">+14</td>
+        </tr>
+        <tr>
+          <td>Will Zalatoris</td>
+          <td>2</td>
+          <td>6</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+18</td>
+        </tr>
+        <tr>
+          <td>Min Woo Lee</td>
+          <td>-1</td>
+          <td>0</td>
+          <td>5</td>
+          <td>2</td>
+          <td class="positive">+6</td>
+        </tr>
+        <tr>
+          <td>Cameron Smith</td>
+          <td>-1</td>
+          <td>6</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+15</td>
+        </tr>
+        <tr>
+          <td>Nicolai Højgaard</td>
+          <td>4</td>
+          <td>2</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+16</td>
+        </tr>
+        <tr>
+          <td>Harris English</td>
+          <td>-2</td>
+          <td>1</td>
+          <td>1</td>
+          <td>-4</td>
+          <td class="negative">-4</td>
+        </tr>
+        
+        <!-- Ben's Team -->
+        <tr class="player-row">
+          <td rowspan="6">Ben</td>
+          <td>Rory McIlroy</td>
+          <td>0</td>
+          <td>-6</td>
+          <td>-6</td>
+          <td>1</td>
+          <td class="negative">-11</td>
+          <td rowspan="6" class="negative">-7</td>
+        </tr>
+        <tr>
+          <td>Cameron Davis</td>
+          <td>2</td>
+          <td>2</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+14</td>
+        </tr>
+        <tr>
+          <td>Min Woo Lee</td>
+          <td>-1</td>
+          <td>0</td>
+          <td>5</td>
+          <td>2</td>
+          <td class="positive">+6</td>
+        </tr>
+        <tr>
+          <td>Jordan Spieth</td>
+          <td>1</td>
+          <td>1</td>
+          <td>-3</td>
+          <td>-2</td>
+          <td class="negative">-3</td>
+        </tr>
+        <tr>
+          <td>Rasmus Højgaard</td>
+          <td>1</td>
+          <td>-5</td>
+          <td>3</td>
+          <td>2</td>
+          <td class="positive">+1</td>
+        </tr>
+        <tr>
+          <td>Matthieu Pavon</td>
+          <td>6</td>
+          <td>4</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+20</td>
+        </tr>
+        
+        <!-- Jack's Team -->
+        <tr class="player-row">
+          <td rowspan="6">Jack</td>
+          <td>Collin Morikawa</td>
+          <td>0</td>
+          <td>-3</td>
+          <td>0</td>
+          <td>0</td>
+          <td class="negative">-3</td>
+          <td rowspan="6" class="positive winner">+26</td>
+        </tr>
+        <tr>
+          <td>Patrick Cantlay</td>
+          <td>2</td>
+          <td>0</td>
+          <td>1</td>
+          <td>-1</td>
+          <td class="positive">+2</td>
+        </tr>
+        <tr>
+          <td>Robert MacIntyre</td>
+          <td>3</td>
+          <td>3</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+16</td>
+        </tr>
+        <tr>
+          <td>Keegan Bradley</td>
+          <td>2</td>
+          <td>1</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+13</td>
+        </tr>
+        <tr>
+          <td>Phil Mickelson</td>
+          <td>3</td>
+          <td>2</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+15</td>
+        </tr>
+        <tr>
+          <td>Sergio Garcia</td>
+          <td>0</td>
+          <td>4</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+14</td>
+        </tr>
+        
+        <!-- Jeremy's Team -->
+        <tr class="player-row">
+          <td rowspan="6">Jeremy</td>
+          <td>Scottie Scheffler</td>
+          <td>-4</td>
+          <td>-1</td>
+          <td>0</td>
+          <td>-3</td>
+          <td class="negative">-8</td>
+          <td rowspan="6" class="positive">+6</td>
+        </tr>
+        <tr>
+          <td>Shane Lowry</td>
+          <td>-1</td>
+          <td>-4</td>
+          <td>0</td>
+          <td>1</td>
+          <td class="negative">-4</td>
+        </tr>
+        <tr>
+          <td>Sepp Straka</td>
+          <td>6</td>
+          <td>-1</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+15</td>
+        </tr>
+        <tr>
+          <td>Cameron Davis</td>
+          <td>2</td>
+          <td>7</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+19</td>
+        </tr>
+        <tr>
+          <td>Max Homa</td>
+          <td>2</td>
+          <td>-2</td>
+          <td>-3</td>
+          <td>-1</td>
+          <td class="negative">-4</td>
+        </tr>
+        <tr>
+          <td>Adam Schenk</td>
+          <td>1</td>
+          <td>3</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+14</td>
+        </tr>
+        
+        <!-- Joey's Team -->
+        <tr class="player-row">
+          <td rowspan="6">Joey</td>
+          <td>Scottie Scheffler</td>
+          <td>-4</td>
+          <td>-1</td>
+          <td>0</td>
+          <td>-3</td>
+          <td class="negative">-8</td>
+          <td rowspan="6" class="negative">-6</td>
+        </tr>
+        <tr>
+          <td>Bryson DeChambeau</td>
+          <td>-3</td>
+          <td>-4</td>
+          <td>-3</td>
+          <td>3</td>
+          <td class="negative">-7</td>
+        </tr>
+        <tr>
+          <td>Stephan Jaeger</td>
+          <td>0</td>
+          <td>2</td>
+          <td>1</td>
+          <td>6</td>
+          <td class="positive">+9</td>
+        </tr>
+        <tr>
+          <td>Matthieu Pavon</td>
+          <td>6</td>
+          <td>4</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+20</td>
+        </tr>
+        <tr>
+          <td>Christiaan Bezuidenhout</td>
+          <td>4</td>
+          <td>3</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+17</td>
+        </tr>
+        <tr>
+          <td>Sahith Theegala</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>-1</td>
+          <td>0</td>
+        </tr>
+        
+        <!-- Colin's Team -->
+        <tr class="player-row">
+          <td rowspan="6">Colin</td>
+          <td>Hideki Matsuyama</td>
+          <td>1</td>
+          <td>-4</td>
+          <td>7</td>
+          <td>-6</td>
+          <td class="negative">-2</td>
+          <td rowspan="6" class="positive">+1</td>
+        </tr>
+        <tr>
+          <td>Corey Conners</td>
+          <td>-4</td>
+          <td>-2</td>
+          <td>-2</td>
+          <td>3</td>
+          <td class="negative">-5</td>
+        </tr>
+        <tr>
+          <td>Russell Henley</td>
+          <td>7</td>
+          <td>-4</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+13</td>
+        </tr>
+        <tr>
+          <td>Adam Scott</td>
+          <td>5</td>
+          <td>0</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+15</td>
+        </tr>
+        <tr>
+          <td>Nick Dunlap</td>
+          <td>18</td>
+          <td>-1</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+27</td>
+        </tr>
+        <tr>
+          <td>Xander Schauffele</td>
+          <td>1</td>
+          <td>-3</td>
+          <td>-2</td>
+          <td>-1</td>
+          <td class="negative">-5</td>
+        </tr>
+        
+        <!-- Bill's Team -->
+        <tr class="player-row">
+          <td rowspan="6">Bill</td>
+          <td>Rory McIlroy</td>
+          <td>0</td>
+          <td>-6</td>
+          <td>-6</td>
+          <td>1</td>
+          <td class="negative">-11</td>
+          <td rowspan="6" class="negative">-12</td>
+        </tr>
+        <tr>
+          <td>Viktor Hovland</td>
+          <td>-1</td>
+          <td>-3</td>
+          <td>1</td>
+          <td>1</td>
+          <td class="negative">-2</td>
+        </tr>
+        <tr>
+          <td>Min Woo Lee</td>
+          <td>-1</td>
+          <td>0</td>
+          <td>5</td>
+          <td>2</td>
+          <td class="positive">+6</td>
+        </tr>
+        <tr>
+          <td>Corey Conners</td>
+          <td>-4</td>
+          <td>-2</td>
+          <td>-2</td>
+          <td>3</td>
+          <td class="negative">-5</td>
+        </tr>
+        <tr>
+          <td>Lucas Glover</td>
+          <td>6</td>
+          <td>2</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+18</td>
+        </tr>
+        <tr>
+          <td>Kevin Yu</td>
+          <td>4</td>
+          <td>2</td>
+          <td>5</td>
+          <td>5</td>
+          <td class="positive">+16</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="footer">
+    <div class="divider"></div>
+    <p>THE 2025 FANTASY MASTERS LEAGUE</p>
+  </div>
 </body>
 </html>
